@@ -43,6 +43,7 @@ ParseMode::ParseMode(u32 hs_flags) :
     ignore_space(false),
     multiline(hs_flags & HS_FLAG_MULTILINE),
     ucp(hs_flags & HS_FLAG_UCP),
-    utf8(hs_flags & HS_FLAG_UTF8) {}
+    utf8(hs_flags & HS_FLAG_UTF8),
+    unix_lines(hs_flags & HS_FLAG_UNIX_LINES) {}
 
 } // namespace ue2

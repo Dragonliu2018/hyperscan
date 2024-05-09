@@ -87,6 +87,8 @@ public:
      * Note that this builder cannot be used after this call.
      */
     virtual BuiltExpression getGraph() = 0;
+
+    virtual bool getHSFlagUnixLines() = 0;
 };
 
 /** Construct a usable NFABuilder. */

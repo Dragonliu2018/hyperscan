@@ -104,6 +104,9 @@ CodePointSet getPredefinedCodePointSet(PredefinedClass c,
         } else {
             CodePointSet rv;
             rv.set('\n');
+            if (!mode.unix_lines) {
+                rv.set('\r');
+            }
             rv.flip();
             return rv;
         }

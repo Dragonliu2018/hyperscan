@@ -82,7 +82,8 @@ extern "C"
                     | HS_FLAG_ALLOWEMPTY \
                     | HS_FLAG_SOM_LEFTMOST \
                     | HS_FLAG_COMBINATION \
-                    | HS_FLAG_QUIET)
+                    | HS_FLAG_QUIET \
+                    | HS_FLAG_UNIX_LINES)
 
 #ifdef __cplusplus
 } /* extern "C" */

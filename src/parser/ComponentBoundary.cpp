@@ -81,7 +81,11 @@ static
 Position makeNewline(GlushkovBuildState &bs) {
     NFABuilder &builder = bs.getBuilder();
     Position newline = builder.makePositions(1);
-    builder.addCharReach(newline, CharReach('\n'));
+    if (builder.getHSFlagUnixLines()) {
+        builder.addCharReach(newline, CharReach("\n"));
+    } else {
+        builder.addCharReach(newline, CharReach("\n\r"));
+    }
     return newline;
 }
 

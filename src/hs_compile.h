@@ -1004,6 +1004,14 @@ hs_error_t HS_CDECL hs_populate_platform(hs_platform_info_t *platform);
  */
 #define HS_FLAG_QUIET           1024
 
+/**
+ * Compile flag: Unix-only line endings.
+ *
+ * When this flag is enabled, only \\u000a is recognized as a line ending
+ * in the behavior of ., ^, and $.
+ */
+#define HS_FLAG_UNIX_LINES      2048
+
 /** @} */
 
 /**

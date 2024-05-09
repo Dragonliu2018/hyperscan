@@ -59,6 +59,7 @@ struct ParseMode {
     bool multiline = false;
     bool ucp = false;
     bool utf8 = false;
+    bool unix_lines = false;
 };
 
 /** \brief Parse the given regular expression into a \ref Component tree.

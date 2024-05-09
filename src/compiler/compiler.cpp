@@ -122,8 +122,8 @@ ParsedLitExpression::ParsedLitExpression(unsigned index_in,
                                          const char *expression,
                                          size_t expLength, unsigned flags,
                                          ReportID report)
-    : expr(index_in, false, flags & HS_FLAG_SINGLEMATCH, false, false,
-           SOM_NONE, report, 0, MAX_OFFSET, 0, 0, 0, false) {
+    : expr(index_in, false, flags & HS_FLAG_SINGLEMATCH, false, false, SOM_NONE,
+           report, 0, MAX_OFFSET, 0, 0, 0, false, flags & HS_FLAG_UNIX_LINES) {
     // For pure literal expression, below 'HS_FLAG_'s are unuseful:
     // DOTALL/ALLOWEMPTY/UTF8/UCP/PREFILTER/COMBINATION/QUIET/MULTILINE
 
@@ -154,7 +154,7 @@ ParsedExpression::ParsedExpression(unsigned index_in, const char *expression,
                                    const hs_expr_ext *ext)
     : expr(index_in, flags & HS_FLAG_ALLOWEMPTY, flags & HS_FLAG_SINGLEMATCH,
            false, flags & HS_FLAG_PREFILTER, SOM_NONE, report, 0, MAX_OFFSET,
-           0, 0, 0, flags & HS_FLAG_QUIET) {
+           0, 0, 0, flags & HS_FLAG_QUIET, flags & HS_FLAG_UNIX_LINES) {
     // We disallow SOM + Quiet.
     if ((flags & HS_FLAG_QUIET) && (flags & HS_FLAG_SOM_LEFTMOST)) {
         throw CompileError("HS_FLAG_QUIET is not supported in "

@@ -83,6 +83,8 @@ public:
 
     BuiltExpression getGraph() override;
 
+    bool getHSFlagUnixLines() override;
+
 private:
     /** fetch a vertex given its Position ID. */
     NFAVertex getVertex(Position pos) const;
@@ -164,6 +166,10 @@ BuiltExpression NFABuilderImpl::getGraph() {
     }
 
     return { expr, move(graph) };
+}
+
+bool NFABuilderImpl::getHSFlagUnixLines() {
+    return expr.unix_lines;
 }
 
 void NFABuilderImpl::setNodeReportID(Position pos, int offsetAdjust) {
